@@ -9,7 +9,7 @@ jobs:
       matrix:
         node: [ 22 ]
 
-    name: Build & Deploy
+    name: Build
     steps:
       - uses: actions/checkout@v3
       - name: Run build
@@ -18,4 +18,8 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm install
       - run: npm run build
-      - run: npm run deploy
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./dist
