@@ -4,7 +4,7 @@ import {createRoot} from "react-dom/client"
 // A simple Class component
 class WalkingSkeleton extends React.Component {
     render() {
-        return <h1>walking skeleton</h1>
+        return <h1>ewan's walking skeleton</h1>
     }
 }
 
