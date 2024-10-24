@@ -4,9 +4,6 @@ on:
     branches: [ main ]
 jobs:
   deploy:
-    permissions:
-      pages: write
-      id-token: write
     runs-on: ubuntu-latest
     strategy:
       matrix:
