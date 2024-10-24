@@ -3,32 +3,19 @@ on:
   push:
     branches: [ main ]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ 22 ]
-
-    name: Build
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run build
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm run build
-
   deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node: [ 22 ]
 
-    name: Deployment
+    name: Build & Deploy
     steps:
       - uses: actions/checkout@v3
-      - name: Run deploy
+      - name: Run build
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm run build
       - run: npm run deploy
