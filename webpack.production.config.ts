@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        publicPath: '/'
+        publicPath: '/me'
     },
     module: {
         rules: [
@@ -13,6 +13,9 @@ module.exports = {
                 exclude: /node_modules/,
             },
         ],
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [new HtmlWebpackPlugin()],
     resolve: {
