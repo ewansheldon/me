@@ -5,7 +5,7 @@ const WalkingSkeleton = () => {
     <>
       {window.location.pathname}
       <p>ewan's walking sheldon!</p>
-      <a><Link to="/other">go to other</Link></a>
+      <Link to="/other">go to other</Link>
     </>
   )
 }

@@ -5,7 +5,7 @@ const Other = () => {
     <>
       {window.location.pathname}
       <p>other place!</p>
-      <a><Link to="/">go home</Link></a><br />
+      <Link to="/">go home</Link><br />
     </>
   )
 }
