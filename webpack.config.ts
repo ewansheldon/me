@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        publicPath: '/me'
+        publicPath: '/'
     },
     module: {
         rules: [
