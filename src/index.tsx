@@ -3,13 +3,13 @@ import { createRoot } from "react-dom/client";
 import WalkingSkeleton from "./pages/WalkingSkeleton";
 import Other from "./pages/Other";
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <>
       <Route path="/other" element={<Other />} />
@@ -21,7 +21,6 @@ const router = createBrowserRouter(
 document.body.innerHTML = '<div id="app"></div>';
 
 const app = createRoot(document.getElementById("app")!);
-const path = window.location.pathname;
 app.render(
   <React.StrictMode>
     <RouterProvider router={router} />
