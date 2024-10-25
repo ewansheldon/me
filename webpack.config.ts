@@ -12,4 +12,7 @@ module.exports = {
         ],
     },
     plugins: [new HtmlWebpackPlugin()],
-}
+    resolve: {
+        extensions: ['.js', '.tsx'] // add your other extensions here
+    }
+};
