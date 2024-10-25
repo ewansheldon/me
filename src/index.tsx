@@ -1,20 +1,29 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import WalkingSkeleton from "./pages/WalkingSkeleton";
+import Other from "./pages/Other";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
-// const WalkingSkeleton = () => {
-//   return <h1>ewan's walking skeleton</h1>;
-// };
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/other" element={<Other />} />
+      <Route path="*" element={<WalkingSkeleton />} />
+    </>
+  )
+);
 
-// Use traditional DOM manipulation to create a root element for React
 document.body.innerHTML = '<div id="app"></div>';
 
-// Create a root element for React
 const app = createRoot(document.getElementById("app")!);
-// Render our WalkingSkeleton component
+const path = window.location.pathname;
 app.render(
-  <>
-    <p>{window.location.pathname}</p>
-    <WalkingSkeleton />
-  </>
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );

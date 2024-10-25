@@ -2,6 +2,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
     entry: './src/index.tsx',
+    output: {
+        publicPath: '/',
+        
+    },
     module: {
         rules: [
             {
@@ -10,6 +14,9 @@ module.exports = {
                 exclude: /node_modules/,
             },
         ],
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [new HtmlWebpackPlugin()],
     resolve: {
