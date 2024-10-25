@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Other = () => {
-  console.log('other!!!!!');
   return (
     <>
       {window.location.pathname}
       <p>other place!</p>
+      <a><Link to="/">go home</Link></a><br />
     </>
   )
 }

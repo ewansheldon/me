@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const WalkingSkeleton = () => {
-  console.log('walking!!!!!');
   return (
     <>
       {window.location.pathname}
       <p>ewan's walking sheldon!</p>
+      <a><Link to="/other">go to other</Link></a>
     </>
   )
 }
