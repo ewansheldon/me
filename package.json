@@ -2,11 +2,10 @@
   "name": "me",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "https://ewansheldon.github.io/",
   "scripts": {
     "deploy": "gh-pages -d dist",
     "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production --config webpack.production.config"
   },
   "author": "",
   "license": "ISC",
