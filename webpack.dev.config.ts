@@ -12,6 +12,17 @@ module.exports = {
                 loader: "ts-loader",
                 exclude: /node_modules/,
             },
+            {
+                test: /\.(jpe?g|gif|png|svg)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000
+                        }
+                    }
+                ]
+            }
         ],
     },
     devServer: {
@@ -19,7 +30,7 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'ewan sheldon',
-        favicon: "./public/me.ico"
+        favicon: "./public/me.jpg"
     })],
     resolve: {
         extensions: ['.js', '.tsx'] // add your other extensions here

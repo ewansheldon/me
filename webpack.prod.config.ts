@@ -16,7 +16,7 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'ewan sheldon',
-        favicon: "./public/me.ico"
+        favicon: "./public/me.jpg"
     })],
     resolve: {
         extensions: ['.js', '.tsx'] // add your other extensions here
