@@ -17,7 +17,10 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
     },
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [new HtmlWebpackPlugin({
+        title: 'ewan sheldon',
+        favicon: "./public/me.ico"
+    })],
     resolve: {
         extensions: ['.js', '.tsx'] // add your other extensions here
     }
