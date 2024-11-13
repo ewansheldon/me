@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -14,14 +15,7 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|gif|png|svg)$/i,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000
-                        }
-                    }
-                ]
+                type: 'asset/resource'
             },
             {
                 test: /\.css$/i,
@@ -32,10 +26,13 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
     },
-    plugins: [new HtmlWebpackPlugin({
-        title: 'ewan sheldon',
-        favicon: "./public/me.jpg"
-    })],
+    plugins: [new Dotenv({
+        path: './.env', // Path to .env file (this is the default)
+        }),
+        new HtmlWebpackPlugin({
+            title: 'ewan sheldon',
+            favicon: "./public/me.jpg"
+        })],
     resolve: {
         extensions: ['.js', '.tsx'] // add your other extensions here
     }

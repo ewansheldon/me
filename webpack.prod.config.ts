@@ -24,7 +24,10 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'ewan sheldon',
-        favicon: "./public/me.jpg"
+        favicon: "./public/me.jpg",
+        'process.env': {
+            'SENDGRID_API_KEY': JSON.stringify(process.env.SENDGRID_API_KEY)
+        }
     })],
     resolve: {
         extensions: ['.js', '.tsx'] // add your other extensions here

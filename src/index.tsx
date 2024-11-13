@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import Home from "./pages/Home";
-import Other from "./pages/Other";
+import Santa from "./pages/Santa";
 import {
   createHashRouter,
   createRoutesFromElements,
@@ -12,7 +12,7 @@ import {
 const router = createHashRouter(
   createRoutesFromElements(
     <>
-      <Route path="/other" element={<Other />} />
+      <Route path="/santa" element={<Santa />} />
       <Route path="*" element={<Home />} />
     </>
   )
