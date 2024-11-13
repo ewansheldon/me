@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { DefinePlugin } from 'webpack';
 
 module.exports = {
     entry: './src/index.tsx',
@@ -22,13 +23,21 @@ module.exports = {
             }
         ],
     },
-    plugins: [new HtmlWebpackPlugin({
-        title: 'ewan sheldon',
-        favicon: "./public/me.jpg",
-        'process.env': {
-            'SENDGRID_API_KEY': JSON.stringify(process.env.SENDGRID_API_KEY)
-        }
-    })],
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'ewan sheldon',
+            favicon: "./public/me.jpg"
+        }),
+        new DefinePlugin(
+            {
+                process: {
+                    env: {
+                        SENDGRID_API_KEY: JSON.stringify(process.env.SENDGRID_API_KEY)
+                    }
+                }
+            }
+        )
+    ],
     resolve: {
         extensions: ['.js', '.tsx'] // add your other extensions here
     }
