@@ -1,5 +1,3 @@
-import Scrap1 from "../../public/scrap 1.jpeg"
-import Scrap2 from "../../public/scrap 2.jpeg"
 import { Key, useState } from "react";
 
 interface Santa {
@@ -40,7 +38,6 @@ const Santa = () => {
   }
 
   const showGift = (gift: string, i: Key) => {
-    const imgSrc = i === 0 ? Scrap1 : Scrap2;
     return <>
       <div className={"gift-scrap gift-scrap-" + i}>
         <p className="card-text">{gift.toUpperCase()}</p>
