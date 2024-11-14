@@ -32,7 +32,7 @@ module.exports = {
             {
                 process: {
                     env: {
-                        SENDGRID_API_KEY: JSON.stringify(process.env.SENDGRID_API_KEY)
+                        RESEND_API_KEY: JSON.stringify(process.env.RESEND_API_KEY)
                     }
                 }
             }

@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
 env:
-    SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+    RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
