@@ -65,6 +65,7 @@ const Santa = () => {
                 <div className="row">
                 {gifts.map(showGift)}
                 </div>
+                <p>Take note of the names ... or you can come back here if you need a reminder.</p>
               </>
             }
         </>
