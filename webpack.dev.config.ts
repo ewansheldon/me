@@ -24,7 +24,7 @@ module.exports = {
         ],
     },
     devServer: {
-        historyApiFallback: true,
+        historyApiFallback: true
     },
     plugins: [new Dotenv({
         path: './.env', // Path to .env file (this is the default)
@@ -35,5 +35,5 @@ module.exports = {
         })],
     resolve: {
         extensions: ['.js', '.tsx'] // add your other extensions here
-    }
+    },
 };

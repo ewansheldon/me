@@ -1,6 +1,51 @@
-.img-dvd {
-    width: 500px
-}
-p {
+body {
+    background-color: pink;
     color: green;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.img-dvd {
+    width: 500px;
+}
+.scrap {
+    width: 300px;
+    padding: 10px;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+.row {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+  }
+.gift-scrap {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    vertical-align: middle;
+    border-radius: 20px;
+    background-color: pink;
+    display: inline-block;
+}
+.gift-scrap-0 {
+    background-color: #f82727;
+}
+.gift-scrap-1 {
+    background-color: rgb(60, 179, 113);
+}
+.card-text {
+    vertical-align: middle;
+    text-align: center;
+    line-height: 200px;
+    margin: 0;
+    color:darkblue;
+    font-family: fantasy;
+    font-size: 30px;
+}
+.input {
+    background-color: rgb(60, 179, 113);
+    color: white;
+    font-size: 20px;
+    border-color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
