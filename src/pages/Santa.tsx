@@ -6,13 +6,13 @@ interface Santa {
 }
 
 const santas: Santa[] = [
-  {name: 'Bryce', gifts: 'Q2Fyb2xlLEphY2s='},
-  {name: 'Caitlin',gifts:  'SnVsaWEsUm9i'},
-  {name: 'Carole', gifts: 'Um9iLEV3YW4='},
-  {name: 'Ewan', gifts: 'QnJ5Y2UsQ2FpdGxpbg=='},
-  {name: 'Jack', gifts: 'Q2FpdGxpbixKdWxpYQ=='},
-  {name: 'Julia', gifts: 'RXdhbixDYXJvbGU='},
-  {name: 'Rob', gifts: 'SmFjayxCcnljZQ=='}
+  { name: 'Bryce', gifts: 'SmFjayxSb2I=' },
+  { name: 'Caitlin', gifts: 'SnVsaWEsQ2Fyb2xl' },
+  { name: 'Carole', gifts: 'Q2FpdGxpbixCcnljZQ==' },
+  { name: 'Ewan', gifts: 'QnJ5Y2UsSnVsaWE=' },
+  { name: 'Jack', gifts: 'Um9iLEV3YW4=' },
+  { name: 'Julia', gifts: 'Q2Fyb2xlLENhaXRsaW4=' },
+  { name: 'Rob', gifts: 'RXdhbixKYWNr' }
 ]
 
 const Santa = () => {
