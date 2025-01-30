@@ -1,8 +1,11 @@
 body {
     background-color: pink;
-    color: green;
-    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    font-family: monospace;
     font-size: 20px;
+}
+.about-me {
+    max-width: 700px;
 }
 .img-dvd {
     width: 500px;
