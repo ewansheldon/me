@@ -1,31 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
-import emailjs from '@emailjs/browser';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 const ContactForm = () => {
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const [ submitted, setSubmitted ] = useState(false);
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.persist();
     e.preventDefault();
-    const res = emailjs.sendForm(
+    const res:EmailJSResponseStatus = await emailjs.sendForm(
       'contact_form',
       'contact_form',
       e.currentTarget,
       'xDxS_YLvC_o3Igw8n'
     )
+    if (res.status === 200) setSubmitted(true);
   }
 
   return (
-    <>
-      <form onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" disabled={false} />
-      </form>
-    </>
+    <div className="contact-form-container">
+      { submitted ? 
+        <p>Thanks! I will be in touch with you shortly.</p> :
+        <form onSubmit={sendEmail}>
+          <label>NAME</label>
+          <input type="text" name="user_name" />
+          <label>EMAIL</label>
+          <input type="email" name="user_email" />
+          <label>MESSAGE</label>
+          <textarea name="message" />
+          <input type="submit" value="SEND" disabled={false} />
+        </form>
+      }
+    </div>
   );
 };
 

@@ -3,24 +3,77 @@ body {
     color: red;
     font-family: monospace;
     font-size: 20px;
+    margin: 15px;
 }
+
 .about-me {
-    max-width: 700px;
+    max-width: 750px;
 }
+
+.contact-form-container {
+    max-width: 700px;
+    height: 100%;
+    /* width: 100%; */
+    display: flex;
+    border: 5px solid red;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input[type=text],
+input[type=email],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: red;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: red;
+    color: pink;
+    font-size: 20px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
 .img-dvd {
     width: 500px;
 }
+
 .scrap {
     width: 300px;
     padding: 10px;
     vertical-align: middle;
     border-radius: 20px;
 }
+
 .row {
     width: 100%;
     max-width: 800px;
     text-align: center;
-  }
+}
+
 .gift-scrap {
     width: 300px;
     height: 200px;
@@ -30,25 +83,21 @@ body {
     background-color: pink;
     display: inline-block;
 }
+
 .gift-scrap-0 {
     background-color: #f82727;
 }
+
 .gift-scrap-1 {
     background-color: rgb(60, 179, 113);
 }
+
 .card-text {
     vertical-align: middle;
     text-align: center;
     line-height: 200px;
     margin: 0;
-    color:darkblue;
+    color: darkblue;
     font-family: fantasy;
     font-size: 30px;
-}
-.input {
-    background-color: rgb(60, 179, 113);
-    color: white;
-    font-size: 20px;
-    border-color: white;
-    font-family: 'Courier New', Courier, monospace;
 }
