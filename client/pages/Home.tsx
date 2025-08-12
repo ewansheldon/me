@@ -1,4 +1,3 @@
-import "../App.css";
 import About from "./About";
 import ContactForm from "./ContactForm";
 

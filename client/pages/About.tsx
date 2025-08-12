@@ -1,5 +1,3 @@
-import "../App.css";
-
 const About = () => {
   return (
     <div className="about-me">
