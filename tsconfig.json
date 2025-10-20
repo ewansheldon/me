@@ -5,17 +5,29 @@
         "moduleResolution": "node",
         "jsx": "react-jsx",
         "esModuleInterop": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
         "strict": true,
         "outDir": "dist",
         "baseUrl": ".",
+        "skipLibCheck": true,
         "paths": {
             "*": [
                 "node_modules/*"
             ]
-        }
+        },
+        "types": ["jest", "@testing-library/jest-dom"]
     },
     "include": [
-        "client",
-        "server"
-    ]
+        "server/**/*",
+        "client/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Santa from './pages/Santa';
+import CompetitionsIndex from './pages/CompetitionIndex/CompetitionsIndex';
+
 
 type Props = {
   Router: React.ComponentType<any>;
@@ -9,10 +10,12 @@ type Props = {
 };
 
 const App = ({ Router, routerProps }: Props) => {
+
   return (
     <Router { ...routerProps }>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/competitions" element={<CompetitionsIndex />} />
       </Routes>
     </Router>
   )
