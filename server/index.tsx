@@ -12,7 +12,7 @@ app.get("/debug", (_req, res) => {
   const fs = require("fs");
   const path = require("path");
   const publicDir = path.resolve(__dirname, "public");
-  res.json({ publicDir, files: fs.readdirSync(publicDir) });
+  res.json({ publicDir, files: fs.readdirSync(publicDir), test: 'foo' });
 });
 
 app.get(/(.*)/, (req, res) => {
