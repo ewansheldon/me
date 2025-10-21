@@ -26,12 +26,15 @@ jobs:
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
-      - name: Deploy to Cloud Run
+      - name: Build and push Docker image
         run: |
-          gcloud run deploy $SERVICE \
-            --source . \
-            --use-dockerfile \
-            --region $REGION \
-            --platform managed \
-            --allow-unauthenticated \
-            --project $PROJECT_ID
+          docker build -t europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run-source-deploy/portfolio:latest .
+          docker push europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run-source-deploy/portfolio:latest
+      
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v2
+        with:
+          service: portfolio
+          region: europe-west1
+          image: europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run-source-deploy/portfolio:latest
+      
