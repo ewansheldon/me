@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import CompetitionsIndex from './pages/CompetitionIndex/CompetitionsIndex';
+import NotFound from './pages/NotFound';
 
 
 type Props = {
@@ -15,7 +15,7 @@ const App = ({ Router, routerProps }: Props) => {
     <Router { ...routerProps }>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/competitions" element={<CompetitionsIndex />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </Router>
   )
