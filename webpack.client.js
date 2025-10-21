@@ -1,22 +1,44 @@
-const path = require('path');
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  mode: 'development',
-  entry: './client/index.tsx',
+  mode: isProd ? "production" : "development",
+  entry: "./client/index.tsx",
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist/public"),
+    filename: "bundle.js",
+    publicPath: "/dist",
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'ts-loader' },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      }
+        use: [
+          isProd ? MiniCssExtractPlugin.loader : "style-loader",
+          "css-loader",
+        ],
+      },
     ],
-  }
+  },
+  plugins: [
+    ...(isProd
+      ? [
+          new MiniCssExtractPlugin({
+            filename: "main.css",
+          }),
+        ]
+      : []),
+  ],
+  devtool: isProd ? false : "inline-source-map",
+  watch: !isProd,
 };

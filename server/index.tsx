@@ -6,13 +6,7 @@ import path from 'path';
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, '../public')));
-
-app.get('/api/competitions', (_, res) => {
-  fetch('https://api.football-data.org/v4/competitions/')
-    .then((data) => data.json())
-    .then(data => res.send(data));
-});
+app.use(express.static(path.resolve(__dirname, "public")));
 
 app.get(/(.*)/, (req, res) => {
   const appHTML = renderToString(<App Router={StaticRouter} routerProps={{ location: req.url }} />);
@@ -23,10 +17,11 @@ app.get(/(.*)/, (req, res) => {
       <head>
         <title>ewan sheldon</title>
         <link rel="icon" href="/me.jpg" />
+        <link rel="stylesheet" href="/main.css" />
+        <script src="/bundle.js" defer></script>
       </head>
       <body>
         <div id="root">${appHTML}</div>
-        <script src="/bundle.js"></script>
       </body>
     </html>
   `;
