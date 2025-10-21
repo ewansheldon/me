@@ -8,6 +8,13 @@ const app = express();
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
+app.get("/debug", (_req, res) => {
+  const fs = require("fs");
+  const path = require("path");
+  const publicDir = path.resolve(__dirname, "public");
+  res.json({ publicDir, files: fs.readdirSync(publicDir) });
+});
+
 app.get(/(.*)/, (req, res) => {
   const appHTML = renderToString(<App Router={StaticRouter} routerProps={{ location: req.url }} />);
 
