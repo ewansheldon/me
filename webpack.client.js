@@ -1,7 +1,8 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isProd = process.env.NODE_ENV === "production";
+const forceExtract = process.env.FORCE_EXTRACT_CSS === "true";
+const isProd = process.env.NODE_ENV === "production" || forceExtract;
 
 module.exports = {
   mode: isProd ? "production" : "development",
