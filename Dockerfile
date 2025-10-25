@@ -4,8 +4,6 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 ENV NODE_ENV=production
-ENV FORCE_EXTRACT_CSS=true
-RUN echo "building NODE_ENV=$NODE_ENV"
 RUN npm run build
 
 FROM node:22-slim AS run

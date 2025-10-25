@@ -1,8 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const forceExtract = process.env.FORCE_EXTRACT_CSS === "true";
-const isProd = process.env.NODE_ENV === "production" || forceExtract;
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   mode: isProd ? "production" : "development",
@@ -10,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist/public"),
     filename: "bundle.js",
-    publicPath: "/dist",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
