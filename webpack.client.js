@@ -30,14 +30,19 @@ module.exports = {
       },
     ],
   },
+  // plugins: [
+  //   ...(isProd
+  //     ? [
+  //         new MiniCssExtractPlugin({
+  //           filename: "main.css",
+  //         }),
+  //       ]
+  //     : []),
+  // ],
   plugins: [
-    ...(isProd
-      ? [
-          new MiniCssExtractPlugin({
-            filename: "main.css",
-          }),
-        ]
-      : []),
+    new MiniCssExtractPlugin({
+      filename: "main.css",
+    }),
   ],
   devtool: isProd ? false : "inline-source-map",
   watch: !isProd,
