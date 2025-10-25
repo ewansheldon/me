@@ -29,6 +29,7 @@ jobs:
         run: |
           docker build -t europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run-source-deploy/portfolio:latest .
           docker push europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run-source-deploy/portfolio:latest
+          docker run -it --rm myapp-test sh -c "echo $NODE_ENV && ls dist/public"
       
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v2
