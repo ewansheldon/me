@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -28,6 +29,10 @@ module.exports = {
           "css-loader",
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   plugins: [
@@ -38,6 +43,11 @@ module.exports = {
           }),
         ]
       : []),
+    new CopyPlugin({
+      patterns: [
+        { from: "public", to: "." },
+      ],
+    }),
   ],
   devtool: isProd ? false : "inline-source-map",
   watch: !isProd,

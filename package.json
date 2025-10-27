@@ -7,7 +7,6 @@
     "build:client": "NODE_ENV=production webpack --config webpack.client.js",
     "build:server": "webpack --config webpack.server.js",
     "build": "npm run build:client && npm run build:server",
-
     "dev:client": "NODE_ENV=development webpack --config webpack.client.js --watch",
     "dev:server": "tsc --noEmit && concurrently \"npm run build:server -- --watch\" \"nodemon dist/server.js\"",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
@@ -31,6 +30,7 @@
     "@types/react-dom": "^18.3.7",
     "@types/react-router-dom": "^5.3.3",
     "concurrently": "^9.2.0",
+    "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
     "dotenv-webpack": "^8.1.0",
     "file-loader": "^6.2.0",

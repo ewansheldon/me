@@ -23,7 +23,7 @@ app.get(/(.*)/, (req, res) => {
     <html>
       <head>
         <title>ewan sheldon</title>
-        <link rel="icon" href="/me.jpg" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/main.css" />
         <script src="/bundle.js" defer></script>
       </head>
