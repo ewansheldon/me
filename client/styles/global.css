@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg-color: pink;
+    --highlight-color: red;
+}
+
 body {
-    background-color: pink;
-    color: red;
-    font-family: monospace;
+    background-color: var(--bg-color);
+    color: var(--highlight-color);
+    font-family: "Montserrat", Arial, sans-serif;
     font-size: 20px;
     margin: 15px;
 }
@@ -15,7 +22,7 @@ body {
     height: 100%;
     /* width: 100%; */
     display: flex;
-    border: 4px solid red;
+    border: 4px solid var(--highlight-color);
     border-radius: 5px;
     padding: 20px;
 }
@@ -28,10 +35,10 @@ select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 2px solid red;
+    border: 2px solid var(--highlight-color);
     border-radius: 4px;
     box-sizing: border-box;
-    color: red;
+    color: var(--highlight-color);
     font-family: monospace;
     font-size: 16px;
 }
@@ -42,8 +49,8 @@ textarea {
 
 input[type=submit] {
     width: 100%;
-    background-color: red;
-    color: pink;
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
     font-size: 20px;
     padding: 14px 20px;
     margin: 8px 0;
