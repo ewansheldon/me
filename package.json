@@ -9,7 +9,8 @@
     "build": "npm run build:client && npm run build:server",
     "dev:client": "NODE_ENV=development webpack --config webpack.client.js --watch",
     "dev:server": "tsc --noEmit && concurrently \"npm run build:server -- --watch\" \"nodemon dist/server.js\"",
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
