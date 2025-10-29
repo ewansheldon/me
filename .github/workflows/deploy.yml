@@ -12,15 +12,25 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run tests
-        run: |
-          npm i
-          npm test
+        run: npm test
 
   deploy:
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
       - name: Checkout repository
