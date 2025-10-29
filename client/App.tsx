@@ -4,7 +4,7 @@ import NotFound from './pages/NotFound';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import ContactForm from './pages/ContactForm/ContactForm';
-
+import CV from './pages/CV/CV';
 
 type Props = {
   Router: React.ComponentType<any>;
@@ -19,6 +19,7 @@ const App = ({ Router, routerProps }: Props) => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<ContactForm />} />
+          <Route path="cv" element={<CV />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
