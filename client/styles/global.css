@@ -17,6 +17,30 @@ p {
     max-width: 750px;
 }
 
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: yellow;
+}
+
+li {
+    list-style: none;
+}
+
+.focused-menu-item {
+    display: none;
+}
+
+.menu-item:hover+.focused-menu-item {
+    display: block;
+    position: absolute;
+    transform: translate(-28px, -48px);
+    font-size: 3.5rem;
+}
+
 .contact-form-container {
     max-width: 700px;
     height: 100%;
