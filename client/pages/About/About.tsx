@@ -12,7 +12,7 @@ const About = () => {
       <h2 role="heading">About this site</h2>
       <p>This portfolio website is a chance to develop side-projects, and work on some things I am learning.</p>
       <p>It is an SSR React site, written with Typescript, tested with Jest and React Testing library. It is continuously deployed to Google Cloud Run with Github Actions, containerised with Docker.</p>
-      <p>You can have a look at the repository <a href="https://github.com/ewansheldon/me" target="_blank">here</a></p>
+      <p>You can have a look at the repository <a href="https://github.com/ewansheldon/me" target="_blank">here</a>.</p>
     </>
   )
 }
