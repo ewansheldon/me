@@ -23,16 +23,17 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="contact-form-container">
+    <div className="contact-form-container" id="contact-form">
       {
         !status &&
           <form onSubmit={sendEmail}>
             <label>NAME</label>
-            <input type="text" name="user_name" required={true} />
+            <input type="text" name="user_name" required={true} aria-label="user-name" />
+        
             <label>EMAIL</label>
-            <input type="email" name="user_email" required={true} />
+            <input type="email" name="user_email" required={true} aria-label="user-email" />
             <label>MESSAGE</label>
-            <textarea name="message" required={true} />
+            <textarea name="message" required={true} aria-label="message" />
             <input type="submit" value="SEND" />
           </form>
       }

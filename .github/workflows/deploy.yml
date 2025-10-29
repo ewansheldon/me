@@ -10,6 +10,13 @@ env:
   REGION: ${{ secrets.CLOUD_RUN_REGION }}
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Run tests
+        run: npm test
+
   deploy:
     runs-on: ubuntu-latest
 
