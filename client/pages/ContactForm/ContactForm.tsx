@@ -23,33 +23,37 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="contact-form-container" id="contact-form">
-      {
-        !status &&
-          <form onSubmit={sendEmail}>
-            <label>NAME</label>
-            <input type="text" name="user_name" required={true} aria-label="user-name" />
-        
-            <label>EMAIL</label>
-            <input type="email" name="user_email" required={true} aria-label="user-email" />
-            <label>MESSAGE</label>
-            <textarea name="message" required={true} aria-label="message" />
-            <input type="submit" value="SEND" />
-          </form>
-      }
-      {
-        status === Status.Sending &&
-          <p>Sending ...</p>
-      }
-      {
-        status === Status.Sent &&
-          <p>Thanks! I will be in touch with you shortly.</p>
-      }
-      {
-        status === Status.Error &&
-          <p>Uh oh, try again shortly.</p>
-      }
-    </div>
+    <>
+      <h1 role="heading">Contact me</h1>
+      <p>If you are interested in working with me, please get in touch with me below.</p>
+      <div className="contact-form-container" id="contact-form">
+        {
+          !status &&
+            <form onSubmit={sendEmail}>
+              <label>NAME</label>
+              <input type="text" name="user_name" required={true} aria-label="user-name" />
+          
+              <label>EMAIL</label>
+              <input type="email" name="user_email" required={true} aria-label="user-email" />
+              <label>MESSAGE</label>
+              <textarea name="message" required={true} aria-label="message" />
+              <input type="submit" value="SEND" />
+            </form>
+        }
+        {
+          status === Status.Sending &&
+            <p>Sending ...</p>
+        }
+        {
+          status === Status.Sent &&
+            <p>Thanks! I will be in touch with you shortly.</p>
+        }
+        {
+          status === Status.Error &&
+            <p>Uh oh, try again shortly.</p>
+        }
+      </div>
+    </>
   );
 };
 
