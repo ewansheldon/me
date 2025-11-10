@@ -9,15 +9,15 @@ test('shows the menu', async () => {
   const menuItems = screen.getAllByRole('menuitem');
   expect(menuItems).toHaveLength(3);
 
-  expect(menuItems[0]).toHaveTextContent('Play Movie');
-  let childAnchor = menuItems[0].childNodes[0];
-  expect(childAnchor).toHaveAttribute('href', '/cv');
+  let menuAnchor = screen.getByText('Play Movie');
+  expect(menuAnchor).toBeInTheDocument();
+  expect(menuAnchor).toHaveAttribute('href', '/cv');
 
-  expect(menuItems[1]).toHaveTextContent('About');
-  childAnchor = menuItems[1].childNodes[0];
-  expect(childAnchor).toHaveAttribute('href', '/about');
+  menuAnchor = screen.getByText('About');
+  expect(menuAnchor).toBeInTheDocument();
+  expect(menuAnchor).toHaveAttribute('href', '/about');
 
-  expect(menuItems[2]).toHaveTextContent('Contact');
-  childAnchor = menuItems[2].childNodes[0];
-  expect(childAnchor).toHaveAttribute('href', '/contact');
+  menuAnchor = screen.getByText('Contact');
+  expect(menuAnchor).toBeInTheDocument();
+  expect(menuAnchor).toHaveAttribute('href', '/contact');
 });

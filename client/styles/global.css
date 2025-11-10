@@ -3,7 +3,7 @@
 :root {
     --bg-color: pink;
     --highlight-color: red;
-    padding-top: 40px;
+    padding: 40px;
 }
 
 body {
@@ -11,7 +11,6 @@ body {
     color: var(--highlight-color);
     font-family: "Montserrat", Arial, sans-serif;
     font-size: 20px;
-    margin: 15px;
 }
 
 p {
