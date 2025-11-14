@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import ContactForm from './pages/ContactForm/ContactForm';
 import CV from './pages/CV/CV';
+import ArchiveTV from './pages/ArchiveTV/ArchiveTV';
 
 type Props = {
   Router: React.ComponentType<any>;
@@ -20,6 +21,7 @@ const App = ({ Router, routerProps }: Props) => {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<ContactForm />} />
           <Route path="cv" element={<CV />} />
+          <Route path="archive-tv" element={<ArchiveTV />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
