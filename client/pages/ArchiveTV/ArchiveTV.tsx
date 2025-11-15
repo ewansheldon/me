@@ -1,3 +1,4 @@
+import Modal from "../../components/Modal";
 import { useEffect, useRef, useState } from "react";
 const STORAGE_URL = 'https://storage.googleapis.com/archive-tv/'
 
@@ -13,6 +14,7 @@ const ArchiveTV = () => {
   const [ muted, setMuted ] = useState<boolean>(true);
   const [ filmCue, setFilmCue ] = useState<number>(0);
   const [ toastMessage, setToastMessage ] = useState<string|null>(null);
+  const [ modalOpen, setModalOpen ] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout|null>(null);
 
@@ -106,47 +108,61 @@ const ArchiveTV = () => {
   }
 
   return (
-    <div className="tv-container">
-      <div className="tv">
-        <video 
-          autoPlay={true}
-          muted={muted}
-          ref={videoRef}
-          onEnded={cueNextFilm}
-        />
-        <div className="tv-label">
-          { toastMessage && (
-            <span>{toastMessage}</span>
-          )}
-          { muted && (
-            <img src="/mute-icon.svg" />
-          )}
+    <>
+      <div className="header-container">
+        <h1>Archive TV</h1>
+        <button className="info-button" onClick={() => setModalOpen(true)}>?</button>
+      </div>
+      <div className="tv-container">
+        <div className="tv">
+          <video 
+            autoPlay={true}
+            muted={muted}
+            ref={videoRef}
+            onEnded={cueNextFilm}
+          />
+          <div className="tv-label">
+            { toastMessage && (
+              <span>{toastMessage}</span>
+            )}
+            { muted && (
+              <img src="/mute-icon.svg" />
+            )}
+          </div>
+        </div>
+        <div className="tv-remote">
+          <div className="tv-remote-group">
+            <button onClick={() => handleChannelChange(1)}>
+              CH ▲
+            </button>
+            <button onClick={() => handleChannelChange(-1)}>
+              CH ▼
+            </button>
+          </div>
+          <div className="tv-remote-group">
+            <button onClick={() => setMuted(!muted)}>
+              { muted ? 'Unmute' : 'Mute' }
+            </button>
+          </div>
+          <div className="tv-remote-group">
+            <button onClick={() => handleVolumeChange(0.1)}>
+              VOL +
+            </button>
+            <button onClick={() => handleVolumeChange(-0.1)}>
+              VOL -
+            </button>
+          </div>
         </div>
       </div>
-      <div className="tv-remote">
-        <div className="tv-remote-group">
-          <button onClick={() => handleChannelChange(1)}>
-            CH ▲
-          </button>
-          <button onClick={() => handleChannelChange(-1)}>
-            CH ▼
-          </button>
-        </div>
-        <div className="tv-remote-group">
-          <button onClick={() => setMuted(!muted)}>
-            { muted ? 'Unmute' : 'Mute' }
-          </button>
-        </div>
-        <div className="tv-remote-group">
-          <button onClick={() => handleVolumeChange(0.1)}>
-            VOL +
-          </button>
-          <button onClick={() => handleVolumeChange(-0.1)}>
-            VOL -
-          </button>
-        </div>
-      </div>
-    </div>
+      <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} content={
+        <>
+          <p>This is an archive TV project, broadcasting 1970s Public Information Films from the UK.</p>
+          <p>It is rooted in real time, to replicate the feel of live television.</p>
+          <p>The films are stored in Google Cloud storage.</p>
+          <p>You can view the code <a href="https://github.com/ewansheldon/me/blob/main/client/pages/ArchiveTV/ArchiveTV.tsx" target="_blank">here</a>.</p>
+        </>
+      } />
+    </>
   )
 }
 
